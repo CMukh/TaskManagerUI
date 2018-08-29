@@ -1,0 +1,41 @@
+<div id="addfrm">
+    <table  class="table" style="width:40%;">
+        <tr>
+            <td>Task Name</td>
+            <td> <input type="text"  [(ngModel)]="taskName"  size=25/></td>
+        </tr>
+        <tr>
+            <td>Priority</td>
+            <td><input type="range" [(ngModel)]="priority" id="Priority" min="0" max="30" value="0" size=25/></td>
+        </tr>
+        <tr>
+            <td>Parent Task</td>
+            <td>
+            <select required [(ngModel)]="parentTaskName">
+                <option selected="selected" disabled>Parent Tasks ....</option>
+                <option *ngFor="let i of list" [ngValue]="i.TaskName"> {{ i.TaskName }}</option> -->
+             </select>
+            </td>
+                                  
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td> <input type="date" [(ngModel)]="startDate"    size=25/></td>
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td> <input type="date"  [(ngModel)]="endDate"   size=25/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class="btn" (click)="addTask()">Add Task</button>
+                <button class="btn" id="reset" (click)="reset()" >Reset</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+    

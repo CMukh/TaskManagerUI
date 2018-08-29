@@ -1,0 +1,48 @@
+<div>  
+
+    <table class="table table-condensed" style="width:90%">
+        <tr>
+            <td>Task:</td>
+            <td  colspan="4"><input type="text" [(ngModel)]="taskName" (keyup)="SearchByTaskName()"/></td>
+            <td>Parent Task:</td>
+            <td  colspan="5"><input type="text" [(ngModel)]="parentTaskName" (keyup)="SearchByParentTaskName()"/></td>
+        </tr> 
+        <tr>
+            <td >Priority From:</td>
+            <td ><input type="text"  [(ngModel)]="priorityFrom" size="2" (keyup)="SearchByPriority()"/></td>
+            <td>Priority To:</td>
+            <td><input type="text" size="2" [(ngModel)]="priorityTo" (keyup)="SearchByPriority()"/></td>
+            <td >Start Date:</td>
+            <td colspan="2"><input type="date" [(ngModel)]="startDate" (change)="SearchByStartDate()"/></td>
+            <td>End Date:</td>
+            <td colspan="2"><input type="date"  [(ngModel)]="endDate" (change)="SearchByEndDate()"/></td>
+        </tr> 
+    </table>
+</div>
+<hr>
+<table  class="table" style="width:90%"  >
+    <thead>
+        <tr>
+            <th>Task Name</th>
+            <th>Parent Task</th>
+            <th>Priority</th>
+            <th>Start Date(dd/mm/yyyy)</th>
+            <th>End Date(dd/mm/yyyy)</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of list1">
+        <tr>
+            <td>{{item.TaskName}}</td>
+            <td>{{item.ParentTaskName}}</td>
+            <td>{{item.Priority}}</td>
+            <td>{{item.Start_Date}}</td>
+            <td>{{item.End_Date}}</td>
+            <td><button  class="btn"  [routerLink]="['/update',item.TaskID]">Edit</button></td>
+            <td><button class="btn" (click)="deleteTask(item)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<router-outlet></router-outlet>
+
+

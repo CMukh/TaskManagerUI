@@ -1,0 +1,7 @@
+#reset{
+    margin-left:10px;
+}
+#addfrm{
+    height: 100%;
+    display: flex;  
+}

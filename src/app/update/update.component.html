@@ -1,0 +1,43 @@
+<div id="addfrm">
+        <h4>Update Task</h4>
+    <table  class="table" style="width:40%;">
+        <tr>
+            <td>Task Name</td>
+            <td> <input type="text"  [(ngModel)]="task.TaskName" placeholder="Task Name" size=25/></td>
+        </tr>
+        <tr>
+            <td>Priority</td>
+            <td><input type="range" [(ngModel)]="task.Priority" id="Priority" min="0" max="30" value="0" size=25/></td>
+        </tr>
+        <tr>
+            <td>Parent Task</td>
+            <td>
+            <select required [(ngModel)]="task.ParentTaskName">
+                <option selected="selected" disabled>Parent Tasks ....</option>
+                <option *ngFor="let i of list" [ngValue]="i.TaskName"> {{ i.TaskName }}</option> -->
+             </select>
+            </td>
+                                  
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td> <input type="date"  [(ngModel)]="dt"  value="dt" size=25/></td>
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td> <input type="date"  [(ngModel)]="task.End_Date"  size=25/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class="btn" (click)="updateTask()">Update</button>        
+                <button class="btn" id="reset"  [routerLink]="['/view']">Cancel</button>
+            </td>
+        </tr>
+    </table>
+    
+    </div>
+    
+    
+    
+    
+        

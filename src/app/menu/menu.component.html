@@ -1,0 +1,5 @@
+<div class="tab" *ngIf="router.url.indexOf('update')<0">
+    <button  class="tablinks "  [routerLink]="['/add']" (click)="updateStatusAdd()" [ngClass]="active?'color-blue':'color-black'">Add Task</button>
+    <button  class="tablinks"  [routerLink]="['/view']" (click)="updateStatusView()" [ngClass]="active?'color-black':'color-blue'">View Task</button>
+  </div>
+<br>
